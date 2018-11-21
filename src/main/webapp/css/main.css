@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    font-family: "微软雅黑",serif;
+    font-size:14px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+    margin:0;
+}
+
+ul, li{
+    list-style: none;
+    margin:0;
+}
+p{
+    margin-bottom:0;
+}
+
+a{
+    color: #333333;
+    text-decoration: none;
+}
+
+a:hover,a:focus {
+    text-decoration: none;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* 头部大图 */
+.container{
+    width: 100%;
+    margin:0 auto;
+}
+
+.header .header_image{
+    width:100%;
+    display:block;
+    min-width:1200px;
+}
+
+/*导航样式*/
+.nav_menu{
+    min-width:1200px;
+    background:#b9060a;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+}
+
+.nav_menu ul li{
+    padding: 0 30px 0 30px;
+    width:200px;
+    height:60px;
+    line-height:60px;
+    font-size:20px;
+    color:#fff;
+    display: inline;
+}
+.nav_menu ul li a{
+    font-family:"微软雅黑",serif;
+    font-size:22px;
+    color:#fff;
+}
+
+/* 底栏格式 */
+.footer{
+    min-width:1200px;
+    height: 130px;
+    background:#b9060a;
+    padding:25px 0 5px 0;
+    text-align:center;
+}
+
+.footer p{
+    color:#fff;
+    font-size:16px;
+    line-height:1.6;
+}
