@@ -47,7 +47,7 @@ a:hover,a:focus {
 
 /* 头部大图 */
 .container{
-    width: 100%;
+    width: 1200px;
     margin:0 auto;
 }
 
@@ -79,6 +79,50 @@ a:hover,a:focus {
     font-family:"微软雅黑",serif;
     font-size:22px;
     color:#fff;
+}
+
+/* 友情链接 */
+.garden{
+    padding:30px 0;
+}
+.garden1{
+    padding-bottom:30px;
+    padding-top:0px;
+}
+.hd1{
+    background:#b9060a;
+    height:55px;
+    line-height:55px;
+    padding:0 20px;
+    margin-bottom: 15px;
+}
+.hd1 h3{
+    font-size:24px;
+    color:#fff;
+    float:left;
+}
+
+
+.hd1 a{
+    display:block;
+    height:55px;
+    line-height:55px;
+    font-size:14px;
+    color:#fff;
+    float:right;
+}
+.link {
+    padding:25px 0 10px 0;
+}
+.link  li{
+    float:left;
+    width:180px;
+    height:72px;
+    margin-right:23px;
+}
+
+.link  li+li+li+li+li+li{
+    margin-right:0;
 }
 
 /* 底栏格式 */
