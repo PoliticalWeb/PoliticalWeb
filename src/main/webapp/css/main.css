@@ -81,6 +81,45 @@ a:hover,a:focus {
     color:#fff;
 }
 
+/* 新闻栏目样式 */
+.box1 {
+    padding: 30px 0 40px 0;
+}
+
+.list_box {
+    width: 580px;
+    float: left;
+}
+
+.project {
+    margin-right: 34px;
+}
+
+.hd {
+    border-bottom: 2px solid #b9060a;
+    margin-bottom: 15px;
+}
+
+.hd h3 {
+    background: #b9060a;
+    color: #fff;
+    font-size: 20px;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 12px;
+    border-radius: 5px 5px 0 0;
+}
+
+.hd a {
+    float: right;
+    font-size: 14px;
+    color: #ce0202;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+}
+
 /* 友情链接 */
 .garden{
     padding:30px 0;
