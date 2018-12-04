@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wut.dao.UserDao">
+    <select id="getNameById" parameterType="com.wut.model.User" resultType="com.wut.model.User">
+        SELECT * FROM user WHERE userId = #{id}
+    </select>
+    <insert id="addUser">
+        INSERT INTO USER(user_TitleNum,user_Sex) VALUES(1,1)
+    </insert>
+    <select id="selectUserById" parameterType="java.lang.Integer" resultType="com.wut.model.User">
+        select * from user where userId=#{id}
+    </select>
+</mapper>
