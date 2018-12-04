@@ -139,3 +139,95 @@ a:hover,a:focus {
     font-size:16px;
     line-height:1.6;
 }
+
+/*副标题*/
+.subhead{
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.subhead span{
+    width: 690px;
+    height: 54px;
+    line-height: 54px;
+    padding-left: 50px;
+    display: block;
+    background-image: url("../image/副标题色框.png");
+    background-size: 690px 54px;
+    background-repeat: no-repeat;
+    font-family:"微软雅黑",serif;
+    font-size:22px;
+    color:#fff;
+}
+.subhead .jxnljz{
+    padding-left: 30px;
+}
+
+/*标题列表*/
+.title_list{
+    margin-top: 60px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.title_list ul li{
+    overflow: hidden;
+    line-height: 40px;
+    background: url(../image/椭圆-1.png) 1px center no-repeat;
+}
+
+.title_list ul li a{
+    float: left;
+    display: block;
+    font-family:"微软雅黑",serif;
+    font-size:16px;
+    color:#000;
+    padding-left: 16px;
+    max-width: 750px;
+    max-height: 40px;
+    text-overflow: hidden;
+}
+.title_list ul li a:hover{
+    color: #ce0202;
+}
+
+.title_list ul li span{
+    float: right;
+    display: block;
+    font-family:"微软雅黑",serif;
+    font-size:16px;
+    color:#000;
+}
+
+/*换页上方分割线*/
+hr{
+    color: #b9060a;
+    margin-top: 60px;
+}
+
+/*换页*/
+.cg-pages{
+    margin-top: 60px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.page_n{
+    padding: 5px 15px;
+    border: 1px solid #898989;
+    margin: 0px 3px;
+}
+.page_n a{
+        color: #898989;
+}
+
+.page_n_now{
+    padding: 5px 15px;
+    border: 1px solid #bb2204;
+    margin: 0px 3px;
+    background: #b9060a;
+}
+.page_n_now a{
+    color: #ffffff;
+}
+
