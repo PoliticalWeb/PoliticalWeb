@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wut.dao.t_newsDao">
+    <select id="getFromMain" resultType="com.wut.model.reFromMain">
+        SELECT * FROM t_news WHERE channel_id=#{channel_id} limit #{num}
+    </select>
+
+    <select id="getFromMore" resultType="com.wut.model.reFromMore">
+        SELECT * FROM t_news WHERE channel_id=#{channel_id} limit #{paper},#{num}
+    </select>
+
+    <select id="getFromOne" resultType="com.wut.model.reFromOne">
+        SELECT * FROM t_news WHERE id=#{id}
+    </select>
+
+    <update id="addClick" >
+        UPDATE t_news SET click_counter=click_counter+1 WHERE id=#{id}
+    </update>
+
+    <select id="getChannelAllNum" resultType="Int" >
+        SELECT COUNT(*) FROM t_news WHERE channel_id=#{channel_id}
+    </select>
+
+</mapper>
