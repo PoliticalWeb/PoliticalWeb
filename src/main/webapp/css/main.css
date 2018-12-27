@@ -91,6 +91,22 @@ a:hover,a:focus {
     float: left;
 }
 
+.list_box ul li{
+    width: 100%;
+    font-size: 16px;
+    line-height: 50px;
+    display: block;
+    height: 50px;
+    box-sizing: border-box;
+
+    color: #030303;
+    padding-left: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: url(../image/dian.png) no-repeat center left;
+}
+
 .project {
     margin-right: 34px;
 }

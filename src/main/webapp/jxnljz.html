@@ -65,5 +65,19 @@
     <p>联系我们：wangnd@foxmail.com</p>
 </div>
 
+<!-- 引用jQuery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script>
+    $.ajax({
+        url: '',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            var title_list = document.getElementsByClassName("title_list");
+            title_list.innerHTML = data;
+        }
+    });
+</script>
 </body>
 </html>
