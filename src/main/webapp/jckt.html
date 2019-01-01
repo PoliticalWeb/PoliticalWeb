@@ -40,7 +40,7 @@
                 success: function (data) {
                     var edu_list = document.getElementsByClassName("edu_list");
                     $.each(data,function (n,value) {
-                        edu_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '<span>'+ data.time_add + '</span>' + '</li>';
+                        edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
                     });
                 }
             });
@@ -88,11 +88,11 @@
 
 <hr />
 
-<!--换页-->
-<!--<div class="cg-pages">-->
-    <!--<span class="page_n_now"><a href="#">1</a></span>-->
-    <!--<span class="page_n"><a href="#">2</a></span>-->
-<!--</div>-->
+<!-- 换页 -->
+<div class="cg-pages">
+    <span class="page_n_now"><a href="#">1</a></span>
+    <span class="page_n"><a href="#">2</a></span>
+</div>
 
 <!-- 底栏 -->
 <div class="footer">

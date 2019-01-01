@@ -27,7 +27,7 @@ window.onload =function () {
         success: function (data) {
             var doc_list = document.getElementsByClassName("doc_list");
             $.each(data,function (n,value) {
-               doc_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '</li>';
+               doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             });
         }
     });
@@ -45,7 +45,7 @@ window.onload =function () {
         success: function (data) {
             var edu_list = document.getElementsByClassName("edu_list");
             $.each(data,function (n,value) {
-                edu_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '</li>';
+                edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             });
         }
     });
@@ -62,7 +62,7 @@ window.onload =function () {
         success: function (data) {
             var theory_list = document.getElementsByClassName("theory_list");
             $.each(data,function (n,value) {
-                theory_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '</li>';
+                theory_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             });
         }
     });
@@ -79,7 +79,7 @@ window.onload =function () {
         success: function (data) {
             var explore_list = document.getElementsByClassName("explore_list");
             $.each(data,function (n,value) {
-                explore_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '</li>';
+                explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             });
         }
     });
@@ -96,7 +96,7 @@ window.onload =function () {
         success: function (data) {
             var lecture_list = document.getElementsByClassName("lecture_list");
             $.each(data,function (n,value) {
-                lecture_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + "</li>";
+                lecture_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + "</li>";
             });
         }
     });

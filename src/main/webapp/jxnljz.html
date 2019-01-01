@@ -9,6 +9,42 @@
     <!-- CSS样式引用 -->
     <link href="css/main.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- 引用jQuery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        function docRequest(id){
+            $.ajax({
+                url: "news/fromOne",
+                type: "POST",
+                data: id,
+                dataType: "json",
+                success: function (data) {
+                    window.open(data);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        window.onload = function () {
+            $.ajax({
+                url: "news/fromMore",
+                type: "POST",
+                data: {
+                    num: 7,
+                    channel_id: 2,
+                },
+                dataType: "json",
+                success: function (data) {
+                    var edu_list = document.getElementsByClassName("lecture_list");
+                    $.each(data,function (n,value) {
+                        edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
+                    });
+                }
+            });
+        }
+    </script>
 </head>
 
 <!-- 首页大图 -->
@@ -37,15 +73,15 @@
 </div>
 
 <!--标题列表-->
-<div class="title_list">
+<div class="lecture_list">
 	<ul>
-		<li><a href="#" target="_blank" title="文章1">文章1xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章2">文章2xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章3">文章3xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章4">文章4xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章5">文章5xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章6">文章6xxxxxx</a><span>2018-12-21</span></li>
-		<li><a href="#" target="_blank" title="文章7">文章7xxxxxx</a><span>2018-12-21</span></li>
+		<!--<li><a href="#" target="_blank" title="文章1">文章1xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章2">文章2xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章3">文章3xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章4">文章4xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章5">文章5xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章6">文章6xxxxxx</a><span>2018-12-21</span></li>-->
+		<!--<li><a href="#" target="_blank" title="文章7">文章7xxxxxx</a><span>2018-12-21</span></li>-->
 	</ul>
 </div>
 
@@ -65,19 +101,5 @@
     <p>联系我们：wangnd@foxmail.com</p>
 </div>
 
-<!-- 引用jQuery -->
-<script src="js/jquery-3.3.1.min.js"></script>
-
-<script>
-    $.ajax({
-        url: '',
-        type: 'get',
-        dataType: 'json',
-        success: function (data) {
-            var title_list = document.getElementsByClassName("title_list");
-            title_list.innerHTML = data;
-        }
-    });
-</script>
 </body>
 </html>

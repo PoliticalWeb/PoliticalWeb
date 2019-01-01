@@ -40,7 +40,7 @@
                 success: function (data) {
                     var explore_list = document.getElementsByClassName("explore_list");
                     $.each(data,function (n,value) {
-                        explore_list.innerHTML += '<li onclick="docRequest(data.id)">' + data.title + '<span>'+ data.time_add + '</span>' + '</li>';
+                        explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
                     });
                 }
             });
