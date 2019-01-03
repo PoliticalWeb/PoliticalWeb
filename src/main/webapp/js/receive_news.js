@@ -18,6 +18,7 @@ window.onload =function () {
     //权威文件
     $.ajax({
         url: "news/fromMain",
+        // url: "http://59.69.75.86:8084/PoliticalWeb/news/fromMain",
         type: "POST",
         data: {
           num: 7,
@@ -26,9 +27,12 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             var doc_list = document.getElementsByClassName("doc_list");
-            $.each(data,function (n,value) {
-               doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            });
+            // $.each(data,function (n,value) {
+            //    doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+            // });
+            for(var n=0;n<7;n++){
+                doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+            }
         }
     });
 
@@ -44,9 +48,12 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             var edu_list = document.getElementsByClassName("edu_list");
-            $.each(data,function (n,value) {
+            // $.each(data,function (n,value) {
+            //     edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+            // });
+            for(var n=0;n<7;n++){
                 edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            });
+            }
         }
     });
 
@@ -61,9 +68,12 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             var theory_list = document.getElementsByClassName("theory_list");
-            $.each(data,function (n,value) {
+            // $.each(data,function (n,value) {
+            //     theory_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+            // });
+            for(var n=0;n<7;n++){
                 theory_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            });
+            }
         }
     });
 
@@ -78,9 +88,12 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             var explore_list = document.getElementsByClassName("explore_list");
-            $.each(data,function (n,value) {
+            // $.each(data,function (n,value) {
+            //     explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+            // });
+            for(var n=0;n<7;n++){
                 explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            });
+            }
         }
     });
 
@@ -95,9 +108,12 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             var lecture_list = document.getElementsByClassName("lecture_list");
-            $.each(data,function (n,value) {
+            // $.each(data,function (n,value) {
+            //     lecture_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + "</li>";
+            // });
+            for(var n=0;n<7;n++){
                 lecture_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + "</li>";
-            });
+            }
         }
     });
 
