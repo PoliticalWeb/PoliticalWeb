@@ -31,6 +31,7 @@ window.onload =function () {
             //    doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             // });
             for(var n=0;n<7;n++){
+                console.log(data[n]);
                 doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
             }
         }
