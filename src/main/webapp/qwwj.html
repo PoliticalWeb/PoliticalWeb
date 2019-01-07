@@ -38,12 +38,8 @@
                 },
                 dataType: "json",
                 success: function (data) {
-                    var doc_list = document.getElementsByClassName("doc_list");
-                    // $.each(data,function (n,value) {
-                    //     doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
-                    // });
                     for(var n=0;n<12;n++){
-                        doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
+                        document.getElementById("qwwj_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '<span>'+ data[n]["time_add"] + '</span>' + '</li>';
                     }
                 }
             });
@@ -78,7 +74,7 @@
 
 <!--标题列表-->
 <div class="title_list">
-	<ul class="doc_list">
+	<ul class="qwwj_list">
 		<!--<li><a href="#" target="_blank" title="文章1">文章1xxxxxx文章1xxxxxx文章1xxxxxx文章1xxxxxx文章1xxxxxx文章1xxxxxx文章1xxxxxx文章1xxxxxx</a><span>2018-12-21</span></li>-->
 		<!--<li><a href="#" target="_blank" title="文章2">文章2xxxxxx</a><span>2018-12-21</span></li>-->
 		<!--<li><a href="#" target="_blank" title="文章3">文章3xxxxxx</a><span>2018-12-21</span></li>-->

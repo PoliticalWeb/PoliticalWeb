@@ -1,18 +1,20 @@
 
-//权威文件
-function docRequest(id){
-    $.ajax({
-        url: "news/fromOne",
-        type: "POST",
-        data: id,
-        dataType: "json",
-        success: function (data) {
-            window.open(data);
-        }
-    });
-}
+
 
 window.onload =function () {
+
+    //点击事件
+    function docRequest(id){
+        $.ajax({
+            url: "news/fromOne",
+            type: "POST",
+            data: id,
+            dataType: "json",
+            success: function (data) {
+                window.open(data);
+            }
+        });
+    }
 
     //首页接收新闻
     //权威文件
@@ -44,7 +46,7 @@ window.onload =function () {
         success: function (data) {
             //console.log(data);
             for(var n=0;n<7;n++){
-                document.getElementById("edu_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
+                document.getElementById("edu_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
             }
         }
     });
@@ -61,7 +63,7 @@ window.onload =function () {
         success: function (data) {
             //console.log(data);
             // for(var n=0;n<7;n++){
-            //     document.getElementById("theory_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
+            //     document.getElementById("theory_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
             // }
         }
     });
@@ -78,7 +80,7 @@ window.onload =function () {
         success: function (data) {
             //console.log(data);
             for(var n=0;n<7;n++){
-                document.getElementById("explore_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
+                document.getElementById("explore_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
             }
         }
     });
@@ -117,25 +119,5 @@ window.onload =function () {
     });
 }
 
-// $(function(){
-//     $('#send').click(function(){
-//         $.ajax({
-//             type: "GET",
-//             url: "test.json",
-//             data: {username:$("#username").val(), content:$("#content").val()},
-//             dataType: "json",
-//             success: function(data){
-//                 $('#resText').empty();   //清空resText里面的所有内容
-//                 var html = '';
-//                 $.each(data, function(commentIndex, comment){
-//                     html += '<div class="comment"><h6>' + comment['username']
-//                         + ':</h6><p class="para"' + comment['content']
-//                         + '</p></div>';
-//                 });
-//                 $('#resText').html(html);
-//             }
-//         });
-//     });
-// });
 
 

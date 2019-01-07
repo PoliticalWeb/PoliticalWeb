@@ -12,22 +12,22 @@
 
     <!-- 引用jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script>
-        function docRequest(id){
-            $.ajax({
-                url: "news/fromOne",
-                type: "POST",
-                data: id,
-                dataType: "json",
-                success: function (data) {
-                    window.open(data);
-                }
-            });
-        }
-    </script>
 
     <script>
         window.onload = function () {
+
+            function docRequest(id){
+                $.ajax({
+                    url: "news/fromOne",
+                    type: "POST",
+                    data: id,
+                    dataType: "json",
+                    success: function (data) {
+                        window.open(data);
+                    }
+                });
+            }
+
             $.ajax({
                 url: "news/fromMore",
                 type: "POST",
@@ -37,12 +37,8 @@
                 },
                 dataType: "json",
                 success: function (data) {
-                    var edu_list = document.getElementsByClassName("edu_list");
-                    // $.each(data,function (n,value) {
-                    //     edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
-                    // });
                     for(var n=0;n<12;n++){
-                        edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '<span>'+ data[n].time_add + '</span>' + '</li>';
+                        document.getElementById("jymz_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '<span>'+ data[n]["time_add"] + '</span>' + '</li>';
                     }
                 }
             });
@@ -58,7 +54,7 @@
 <!-- 导航栏 -->
 <div class="nav_menu">
     <div class="container clearfix">
-        <ul>
+        <ul id="jymz_list">
             <li><a href="index.html">首页</a> </li>
             <li><a href="qwwj.html">权威文件</a> </li>
             <li><a href="jymz.html">教育名著</a> </li>
