@@ -2,8 +2,8 @@
 //权威文件
 function docRequest(id){
     $.ajax({
-       url: "news/fromOne",
-       type: "POST",
+        url: "news/fromOne",
+        type: "POST",
         data: id,
         dataType: "json",
         success: function (data) {
@@ -18,21 +18,15 @@ window.onload =function () {
     //权威文件
     $.ajax({
         url: "news/fromMain",
-        // url: "http://59.69.75.86:8084/PoliticalWeb/news/fromMain",
         type: "POST",
         data: {
-          num: 7,
-          channel_id: 1,
+            num: 7,
+            channel_id: 1,
         },
         dataType: "json",
         success: function (data) {
-            var doc_list = document.getElementsByClassName("doc_list");
-            // $.each(data,function (n,value) {
-            //    doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            // });
             for(var n=0;n<7;n++){
-                console.log(data[n]);
-                doc_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+                document.getElementById("doc_list").innerHTML += '<li onclick=docRequest(data[n]["id"])>' + data[n]["title"] + '</li>';
             }
         }
     });
@@ -48,12 +42,9 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            var edu_list = document.getElementsByClassName("edu_list");
-            // $.each(data,function (n,value) {
-            //     edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            // });
+            //console.log(data);
             for(var n=0;n<7;n++){
-                edu_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
+                document.getElementById("edu_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
             }
         }
     });
@@ -68,13 +59,10 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            var theory_list = document.getElementsByClassName("theory_list");
-            // $.each(data,function (n,value) {
-            //     theory_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            // });
-            for(var n=0;n<7;n++){
-                theory_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            }
+            //console.log(data);
+            // for(var n=0;n<7;n++){
+            //     document.getElementById("theory_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
+            // }
         }
     });
 
@@ -88,32 +76,9 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            var explore_list = document.getElementsByClassName("explore_list");
-            // $.each(data,function (n,value) {
-            //     explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            // });
+            //console.log(data);
             for(var n=0;n<7;n++){
-                explore_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + '</li>';
-            }
-        }
-    });
-
-    //教学能力讲座
-    $.ajax({
-        url: "news/fromMain",
-        type: "POST",
-        data: {
-            num: 7,
-            channel_id: 5,
-        },
-        dataType: "json",
-        success: function (data) {
-            var lecture_list = document.getElementsByClassName("lecture_list");
-            // $.each(data,function (n,value) {
-            //     lecture_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + "</li>";
-            // });
-            for(var n=0;n<7;n++){
-                lecture_list.innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n].title + "</li>";
+                document.getElementById("explore_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + '</li>';
             }
         }
     });
@@ -123,13 +88,31 @@ window.onload =function () {
         url: "news/fromMain",
         type: "POST",
         data: {
+            num: 1,
+            channel_id: 5,
+        },
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            // var video = document.getElementById("video");
+            // video.src = data[0]["title"];
+        }
+    });
+
+    //教学能力讲座
+    $.ajax({
+        url: "news/fromMain",
+        type: "POST",
+        data: {
             num: 7,
             channel_id: 6,
         },
         dataType: "json",
         success: function (data) {
-                var video = document.getElementById("video");
-                video.src = data;
+            console.log(data);
+            //         for(var n=0;n<7;n++){
+            //             document.getElementById("lecture_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + "</li>";
+            // }
         }
     });
 }
