@@ -17,17 +17,17 @@
         window.onload = function () {
 
             //点击事件
-            function docRequest(id){
-                $.ajax({
-                    url: "news/fromOne",
-                    type: "POST",
-                    data: id,
-                    dataType: "json",
-                    success: function (data) {
-                        document.getElementById("jckt_list").innerHTML = '<video style="width: 580px;height:300px" src="data">' + '</video>';
-                    }
-                });
-            }
+            // function docRequest(id){
+            //     $.ajax({
+            //         url: "news/fromOne",
+            //         type: "POST",
+            //         data: id,
+            //         dataType: "json",
+            //         success: function (data) {
+            //             document.getElementById("jckt_list").innerHTML = '<video style="width: 580px;height:300px" src="data">' + '</video>';
+            //         }
+            //     });
+            // }
 
             $.ajax({
                 url: "news/fromMore",
@@ -39,7 +39,7 @@
                 dataType: "json",
                 success: function (data) {
                     for(var n=0;n<12;n++){
-                        document.getElementById("jckt_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '<span>'+ data[n]["time_add"] + '</span>' + '</li>';
+                        document.getElementById("jckt_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' +data[n]["title"] + '</a>' + '<span>'+ data[n]["time_add"] + '</span>' + '</li>';
                     }
                 }
             });

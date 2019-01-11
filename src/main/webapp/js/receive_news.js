@@ -3,18 +3,18 @@
 
 window.onload =function () {
 
-    //点击事件
-    function docRequest(id){
-        $.ajax({
-            url: "news/fromOne",
-            type: "POST",
-            data: id,
-            dataType: "json",
-            success: function (data) {
-                window.open(data);
-            }
-        });
-    }
+    // //点击事件
+    // function docRequest(id){
+    //     $.ajax({
+    //         url: "news/fromOne",
+    //         type: "POST",
+    //         data: id,
+    //         dataType: "json",
+    //         success: function (data) {
+    //             window.open(data);
+    //         }
+    //     });
+    // }
 
     //首页接收新闻
     //权威文件
@@ -28,7 +28,7 @@ window.onload =function () {
         dataType: "json",
         success: function (data) {
             for(var n=0;n<7;n++){
-                document.getElementById("doc_list").innerHTML += '<li onclick=docRequest(data[n]["id"])>' + data[n]["title"] + '</li>';
+                document.getElementById("doc_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' + data[n]["title"] + '</a>' + '</li>';
             }
         }
     });
@@ -46,7 +46,7 @@ window.onload =function () {
         success: function (data) {
             //console.log(data);
             for(var n=0;n<7;n++){
-                document.getElementById("edu_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
+                document.getElementById("edu_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' + data[n]["title"] + '</a>' + '</li>';
             }
         }
     });
@@ -61,10 +61,9 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            //console.log(data);
-            // for(var n=0;n<7;n++){
-            //     document.getElementById("theory_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
-            // }
+            for(var n=0;n<7;n++){
+                document.getElementById("theory_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' + data[n]["title"] + '</a>' + '</li>';
+            }
         }
     });
 
@@ -78,9 +77,8 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            //console.log(data);
             for(var n=0;n<7;n++){
-                document.getElementById("explore_list").innerHTML += '<li onclick="docRequest(data[n]["id"])">' + data[n]["title"] + '</li>';
+                document.getElementById("explore_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' + data[n]["title"] + '</a>' + '</li>';
             }
         }
     });
@@ -95,9 +93,8 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            console.log(data);
-            // var video = document.getElementById("video");
-            // video.src = data[0]["title"];
+            var video = document.getElementById("video");
+            video.src = data[0]["title"];
         }
     });
 
@@ -111,10 +108,9 @@ window.onload =function () {
         },
         dataType: "json",
         success: function (data) {
-            console.log(data);
-            //         for(var n=0;n<7;n++){
-            //             document.getElementById("lecture_list").innerHTML += '<li onclick="docRequest(data[n].id)">' + data[n]["title"] + "</li>";
-            // }
+                for(var n=0;n<7;n++){
+                    document.getElementById("lecture_list").innerHTML += '<li>' + '<a href="data[n][t_local]">' + data[n]["title"] + '</a>' + '</li>';
+            }
         }
     });
 }
