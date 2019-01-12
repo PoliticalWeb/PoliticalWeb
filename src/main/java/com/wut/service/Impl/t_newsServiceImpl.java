@@ -23,7 +23,7 @@ public class t_newsServiceImpl implements t_newsService {
 
     @Override
     public List<reFromMore> requestFromMore(int paper,int channel_id,int num){
-        return t_newsDao.getFromMore((paper-1)*4,channel_id,num);
+        return t_newsDao.getFromMore((paper-1)*num,channel_id,num);
     }
 
     @Override
